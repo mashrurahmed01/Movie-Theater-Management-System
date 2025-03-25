@@ -1,0 +1,100 @@
+package Gui;
+
+import javax.swing.*;
+import javax.swing.border.TitledBorder;
+import java.awt.*;
+import java.awt.event.*;
+import EntityList.*;
+import Entity.*;
+
+public class movie1 extends JFrame implements ActionListener {
+
+    JPanel panel;
+    JButton buyBtn, backBtn;
+
+    JSpinner spinner;
+    SpinnerNumberModel spinModel;
+
+    String name;
+    String movieName = "The Avengers: Endgame";
+    String Price = "450 Taka";
+
+    Font font = new Font("arial", Font.BOLD, 25);
+    Font bfont = new Font("arial", Font.BOLD, 25);
+
+    public movie1(String name) {
+        super("Movie 1");
+//        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+//        this.setSize(1000, 750);
+//        this.setLocationRelativeTo(null); // Center the frame
+//        this.setLayout(null);
+        //this.name = name;
+        this.setSize(1000,500);
+        this.setLocation(null);
+        this.setLayout(null);
+
+        this.setIconImage(new ImageIcon("./Assets/Icon.jpg").getImage());
+
+        panel = new JPanel();
+        panel.setLayout(null);
+        panel.setSize(1000,500);
+        panel.setOpaque(false);
+
+        this.add(panel);
+
+        ImageIcon image = new ImageIcon("./Assets/HomePage.jpg");
+        JLabel background = new JLabel();
+        background.setBounds(0,0,1000,500);
+        background.setIcon(image);
+        this.add(background);
+
+        panel = new JPanel();
+        panel.setLayout(null);
+        panel.setBackground(Color.black);
+
+        titleBar();
+    }
+    public JButton createButton(int x,int y,int w,int h, String text){
+        JButton btn = new JButton(text);
+        btn.setBounds(x, y, w,h);
+        btn.setFont(bfont);
+        btn.addActionListener(this);
+        btn.setBackground(Color.BLACK);
+        btn.setForeground(Color.BLACK);
+        panel.add(btn);
+        return btn;
+    }
+
+    public void titleBar(){
+        JPanel titleBarPanel = new JPanel();
+        titleBarPanel.setBorder(new TitledBorder(null, "Movie 1", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+        titleBarPanel.setBounds(450, 250, 1000, 750);
+        panel.add(titleBarPanel);
+        titleBarPanel.setLayout(null);
+
+        backBtn = new JButton("");
+        backBtn.setContentAreaFilled(false);
+        backBtn.setFocusPainted(false);
+        backBtn.setBorder(null);
+        backBtn.setIcon(new ImageIcon("Assets/back.png"));
+        backBtn.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        backBtn.setBounds(20, 50, 30, 30);
+        titleBarPanel.add(backBtn);
+        backBtn.addActionListener(this);
+
+        buyBtn = createButton(770,50,150,30,"BUY");
+        buyBtn.setBackground(Color.GREEN);
+
+
+    }
+    public void actionPerformed(ActionEvent e){
+        if (e.getSource()==buyBtn){
+            JOptionPane.showMessageDialog(null, "Thank you for your purchase");
+        }
+    }
+
+
+
+
+
+}

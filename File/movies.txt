@@ -1,0 +1,16 @@
+0;Fast X;22;450.0
+1;Avengers: End Game;34;550.0
+2;Barbie;50;450.0
+3;Interstellar;34;499.0
+4;Shutter Island;23;599.0
+5;Blade Runner: 2049;50;450.0
+6;Spider Man;15;350.0
+7;Venom;34;350.0
+8;Deadpool;23;450.0
+9;The Godfather;25;450.0
+10;Fight Club;23;450.0
+11;Inception;50;550.0
+12;The Matrix;80;450.0
+13;Parasite;25;660.0
+14;Gladiator;55;499.0
+16;Spider-Verse;45;450.0
